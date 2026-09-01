@@ -145,3 +145,85 @@ Several factors that can influence real race performance are not yet explicitly 
 - **Single-race calibration:** the pace and tyre-degradation estimates are currently derived only from the 2025 Bahrain Grand Prix and should not be assumed to generalize to other circuits or seasons.
 
 The Monte Carlo component currently represents uncertainty primarily through stochastic lap-time variation based on the fitted regression residuals. It therefore captures only part of the uncertainty present in an actual Formula 1 race.
+
+## Next Steps
+
+The current Bahrain GP model represents the first working version of the simulator. Future development will focus on improving both model calibration and race realism.
+
+Planned improvements include:
+
+1. **Calibrate pit-stop loss using real Bahrain 2025 race data** rather than relying on the current placeholder value.
+2. **Validate the simulator against historical race strategies** to evaluate how closely simulated outcomes reflect actual race performance.
+3. **Extend the model to additional 2025 races** to examine whether tyre degradation and pace parameters generalize across circuits.
+4. **Model additional sources of race uncertainty**, including Safety Cars, Virtual Safety Cars, yellow/red flag conditions, traffic, and pit-stop variability.
+5. **Incorporate weather and track-condition information** where suitable data are available.
+6. **Explore telemetry-based features**, such as throttle, braking, and speed, for more detailed pace modelling.
+7. **Evaluate 2026 race data separately**, rather than assuming that parameters estimated from the 2025 season remain applicable.
+
+## Repository Structure
+
+```text
+F1-Race-Strategy-Simulator/
+│
+├── 01_F1_Race_Strategy_Simulator_Bahrain_2025.ipynb
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
+
+## How to Run
+
+The current version of this project is designed to run in **Google Colab**.
+
+### 1. Open the notebook
+
+Open `Bahrain_2025.ipynb` in Google Colab.
+
+### 2. Obtain the dataset
+
+Download the following CSV files from the public F1 dataset:
+
+- `races.csv`
+- `drivers.csv`
+- `lap_times.csv`
+- `tyre_laps.csv`
+
+Dataset source:  
+https://github.com/tapanBabbar9/f1/tree/main/dataset
+
+### 3. Prepare the data directory
+
+Create the following directory in Google Drive:
+
+```text
+MyDrive/
+└── F1-Race-Strategy-Simulator/
+    └── data/
+        └── source/
+            ├── races.csv
+            ├── drivers.csv
+            ├── lap_times.csv
+            └── tyre_laps.csv
+The notebook currently reads the source data from:
+/content/drive/MyDrive/F1-Race-Strategy-Simulator/data/source/
+
+### 4. Install dependencies
+
+Required Python packages are listed in requirements.txt.
+
+In Google Colab, the required packages can also be installed directly if needed:
+!pip install numpy pandas matplotlib statsmodels fastf1
+
+### 5. Run the notebook
+Run the notebook cells sequentially from top to bottom.
+
+The workflow performs:
+Data loading and preparation
+Bahrain GP 2025 filtering
+Lap-data cleaning
+Pace and tyre-degradation modelling
+Strategy simulation
+Monte Carlo strategy comparison
+
+Running outside Google Colab
+The current notebook uses a Google Drive-specific file path. If running locally or in another environment, update PROJECT_DIR and SOURCE_DIR to match the location of the dataset on your system.
