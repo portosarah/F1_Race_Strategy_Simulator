@@ -171,7 +171,7 @@ F1-Race-Strategy-Simulator/
 ├── README.md
 └── requirements.txt
 
-## How to Run
+**## How to Run**
 
 The current version of this project is designed to run in **Google Colab**.
 
