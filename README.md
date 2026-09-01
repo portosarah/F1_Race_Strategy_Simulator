@@ -171,7 +171,11 @@ F1-Race-Strategy-Simulator/
 ├── README.md
 └── requirements.txt
 
-**## How to Run**
+The current version uses a single end-to-end Jupyter Notebook containing the data preparation, cleaning, modelling, visualization, and Monte Carlo strategy simulation workflow.
+
+As the project expands, reusable modelling and simulation components may be separated into dedicated modules and notebooks.
+
+## How to Run
 
 The current version of this project is designed to run in **Google Colab**.
 
