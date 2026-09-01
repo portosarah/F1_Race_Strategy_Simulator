@@ -160,21 +160,6 @@ Planned improvements include:
 6. **Explore telemetry-based features**, such as throttle, braking, and speed, for more detailed pace modelling.
 7. **Evaluate 2026 race data separately**, rather than assuming that parameters estimated from the 2025 season remain applicable.
 
-## Repository Structure
-
-```text
-F1-Race-Strategy-Simulator/
-│
-├── 01_F1_Race_Strategy_Simulator_Bahrain_2025.ipynb
-├── .gitignore
-├── LICENSE
-├── README.md
-└── requirements.txt
-
-The current version uses a single end-to-end Jupyter Notebook containing the data preparation, cleaning, modelling, visualization, and Monte Carlo strategy simulation workflow.
-
-As the project expands, reusable modelling and simulation components may be separated into dedicated modules and notebooks.
-
 ## How to Run
 
 The current version of this project is designed to run in **Google Colab**.
@@ -231,3 +216,18 @@ Monte Carlo strategy comparison
 
 Running outside Google Colab
 The current notebook uses a Google Drive-specific file path. If running locally or in another environment, update PROJECT_DIR and SOURCE_DIR to match the location of the dataset on your system.
+
+## Repository Structure
+
+```text
+F1-Race-Strategy-Simulator/
+│
+├── 01_F1_Race_Strategy_Simulator_Bahrain_2025.ipynb
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
+
+The current version uses a single end-to-end Jupyter Notebook containing the data preparation, cleaning, modelling, visualization, and Monte Carlo strategy simulation workflow.
+
+As the project expands, reusable modelling and simulation components may be separated into dedicated modules and notebooks
