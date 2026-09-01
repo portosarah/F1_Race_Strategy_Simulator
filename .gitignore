@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# F1 project-specific files
+fastf1_cache/
+.fastf1-cache/
+
+# Large/raw datasets
+data/raw/
+data/source/
+
+# macOS
+.DS_Store
