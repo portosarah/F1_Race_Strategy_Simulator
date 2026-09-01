@@ -180,11 +180,13 @@ Download the following CSV files from the public F1 dataset:
 Dataset source:  
 https://github.com/tapanBabbar9/f1/tree/main/dataset
 
+Simulation components may be separated into dedicated modules and notebooks
+
 ### 3. Prepare the data directory
 
 Create the following directory in Google Drive:
 
-```text
+<pre>
 MyDrive/
 └── F1-Race-Strategy-Simulator/
     └── data/
@@ -193,41 +195,35 @@ MyDrive/
             ├── drivers.csv
             ├── lap_times.csv
             └── tyre_laps.csv
+</pre>
+
 The notebook currently reads the source data from:
-/content/drive/MyDrive/F1-Race-Strategy-Simulator/data/source/
+
+<code>/content/drive/MyDrive/F1-Race-Strategy-Simulator/data/source/</code>
 
 ### 4. Install dependencies
 
-Required Python packages are listed in requirements.txt.
+Required Python packages are listed in `requirements.txt`.
 
 In Google Colab, the required packages can also be installed directly if needed:
+
+<pre>
 !pip install numpy pandas matplotlib statsmodels fastf1
+</pre>
 
 ### 5. Run the notebook
+
 Run the notebook cells sequentially from top to bottom.
 
 The workflow performs:
-Data loading and preparation
-Bahrain GP 2025 filtering
-Lap-data cleaning
-Pace and tyre-degradation modelling
-Strategy simulation
-Monte Carlo strategy comparison
 
-Running outside Google Colab
-The current notebook uses a Google Drive-specific file path. If running locally or in another environment, update PROJECT_DIR and SOURCE_DIR to match the location of the dataset on your system.
+1. Data loading and preparation
+2. Bahrain GP 2025 filtering
+3. Lap-data cleaning
+4. Pace and tyre-degradation modelling
+5. Strategy simulation
+6. Monte Carlo strategy comparison
 
-## Repository Structure
+### Running outside Google Colab
 
-```text
-F1-Race-Strategy-Simulator/
-│
-├── 01_F1_Race_Strategy_Simulator_Bahrain_2025.ipynb
-├── .gitignore
-├── LICENSE
-├── README.md
-└── requirements.txt
-
-The current version uses a single end-to-end Jupyter Notebook containing the data preparation, cleaning, modelling, visualization, and Monte Carlo strategy simulation workflow.
-
-As the project expands, reusable modelling and simulation components may be separated into dedicated modules and notebooks
+The current notebook uses a Google Drive-specific file path. If running locally or in another environment, update `PROJECT_DIR` and `SOURCE_DIR` to match the location of the dataset on your system.
