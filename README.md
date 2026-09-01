@@ -1,1 +1,1 @@
-# F1_Race_Strategy_Simulator
+# F1 Race Strategy Simulator
